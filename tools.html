@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroZone - Products & Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif; /* Poppins font */
+            background-color: #f4f4f4; /* Light background color */
+        }
+
+        /* Main content area */
+        .content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: auto; /* Centering the content */
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        /* Products Section Styles */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Product Card Styles */
+        .product-wrapper {
+            position: relative;
+            padding: 15px;
+            background-color: #e0e0e0; /* Light gray background for each product */
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .product-wrapper:hover {
+            transform: translateY(-10px); /* Lifts the card on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Add shadow for depth on hover */
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: space-between; /* Ensure even spacing between items */
+        }
+
+        .product img {
+            width: 100%; /* Full width of the container */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 200px; /* Set a maximum height for the image */
+            object-fit: contain; /* Ensures the image fits well within the bounds without being cropped */
+            margin-bottom: 15px;
+        }
+
+        .product h4 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .product p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #228B22; /* Green color for price */
+        }
+
+        /* Highlighted Buy Button Styles */
+        .buy-button {
+            background: linear-gradient(135deg, #32CD32, #228B22); /* Green gradient */
+            color: white;
+            padding: 12px 20px; /* Bigger padding for more emphasis */
+            border: none;
+            border-radius: 50px; /* Rounded button */
+            cursor: pointer;
+            font-size: 1.1em; /* Larger font for emphasis */
+            font-weight: bold;
+            text-transform: uppercase; /* All caps text */
+            text-decoration: none;
+            display: block; /* Ensure it takes the full width available */
+            margin-top: 10px;
+            width: 100%; /* Full width of the product card */
+            text-align: center; /* Center the text */
+            box-sizing: border-box; /* Ensure the padding is included in the element's width */
+            transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #1e7b1e, #196619); /* Darker gradient on hover */
+            transform: translateY(-5px); /* Slightly lift the button on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        }
+
+        /* Back icon styles */
+        .back-icon {
+            font-size: 24px; /* Size of the icon */
+            color: #228B22; /* Color of the icon */
+            text-decoration: none; /* No underline */
+            display: inline-block;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .back-icon:hover {
+            color: #1e7b1e; /* Darker green on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Back Icon -->
+    <div class="content">
+        <a href="getstarted.html" class="back-icon">&#8592;</a> <!-- Left arrow icon -->
+
+        <!-- Main Content Area -->
+        <h2>Products & Services</h2>
+        <div class="products">
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="old-hand-plow-e1Xe383-600.jpg" alt="Plow">
+                    <h4>Plow</h4>
+                    <p>Used for turning and breaking up soil.</p>
+                    <span class="price">Rs.2000</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="harrows.png" alt="Harrows">
+                    <h4>Harrows</h4>
+                    <p>Breaks up and levels the soil.</p>
+                    <span class="price">Rs.15000</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="tiller.jpg" alt="Tiller">
+                    <h4>Tiller</h4>
+                    <p>Prepares the soil for planting.</p>
+                    <span class="price">Rs.25000</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="culti.png" alt="Cultivator">
+                    <h4>Cultivator</h4>
+                    <p>Loosens soil and removes weeds around crops.</p>
+                    <span class="price">Rs.18000</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="hoe.jpg" alt="Hoe">
+                    <h4>Hoe</h4>
+                    <p>Used for weeding and shaping soil.</p>
+                    <span class="price">Rs.150</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="rake.png" alt="Rake">
+                    <h4>Rake</h4>
+                    <p>Used for leveling and collecting debris.</p>
+                    <span class="price">Rs.250</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="pngimg.com - shovel_PNG108902.png" alt="Shovel">
+                    <h4>Shovel</h4>
+                    <p>For digging, lifting, and moving bulk materials.</p>
+                    <span class="price">Rs.300</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="pngimg.com - shovel_PNG108903.png" alt="Spade">
+                    <h4>Spade</h4>
+                    <p>Similar to a shovel, but with a flat blade.</p>
+                    <span class="price">Rs.250</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="sickle.jpg" alt="Sickle">
+                    <h4>Sickle</h4>
+                    <p>A hand tool for harvesting grain crops.</p>
+                    <span class="price">Rs.250</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="chain.jpg" alt="Chainsaw">
+                    <h4>Chainsaw</h4>
+                    <p>For cutting trees and large branches.</p>
+                    <span class="price">Rs.3000</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <div class="product-wrapper">
+                <div class="product">
+                    <img src="tractor.png" alt="Tractor">
+                    <h4>Tractor</h4>
+                    <p>A powerful vehicle for pulling various types of farming equipment.</p>
+                    <span class="price">Rs.20,0000</span>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

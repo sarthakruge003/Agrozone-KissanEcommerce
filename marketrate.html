@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Market Rates - AgroZone</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for icons -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .hero {
+            background: #228B22;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #32CD32;
+            position: relative;
+        }
+        /* Back button styling */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .your-rates {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="hero">
+        <a href="getstarted.html" class="back-button"><i class="fas fa-arrow-left"></i></a> <!-- Back Icon -->
+        <h1>Live Crop Market Rates</h1>
+        <p>Stay updated with the latest market rates for crops.</p>
+    </div>
+
+    <!-- User Input Section -->
+    <div class="container your-rates">
+        <h3>Your Side Rates</h3>
+        <form id="rateForm">
+            <div class="form-group">
+                <label for="cropSelect">Select Crop</label>
+                <select id="cropSelect" class="form-control" required>
+                    <option value="" disabled selected>Select a crop</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Rice">Rice</option>
+                    <option value="Maize">Maize</option>
+                    <option value="Soybean">Soybean</option>
+                    <option value="Barley">Barley</option>
+                    <option value="Mustard">Mustard</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cropPrice">Price (₹ per Quintal)</label>
+                <input type="number" id="cropPrice" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="cropLocation">Location</label>
+                <input type="text" id="cropLocation" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Add Your Rate</button>
+        </form>
+
+        <!-- Display User Rates -->
+        <h4 class="mt-4">Your Rates List</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Crop Name</th>
+                    <th>Price (₹ per Quintal)</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="userRates"></tbody>
+        </table>
+    </div>
+
+    <!-- Market Rates Table Section -->
+    <div class="container mt-5">
+        <h3>Current Market Rates</h3>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Crop Name</th>
+                        <th>Price (₹ per Quintal)</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody id="marketRates">
+                    <tr>
+                        <td>Wheat</td>
+                        <td>2000</td>
+                        <td>Madhya Pradesh</td>
+                    </tr>
+                    <tr>
+                        <td>Rice</td>
+                        <td>1500</td>
+                        <td>Punjab</td>
+                    </tr>
+                    <tr>
+                        <td>Maize</td>
+                        <td>1200</td>
+                        <td>Haryana</td>
+                    </tr>
+                    <tr>
+                        <td>Soybean</td>
+                        <td>2500</td>
+                        <td>Maharashtra</td>
+                    </tr>
+                    <tr>
+                        <td>Barley</td>
+                        <td>1800</td>
+                        <td>Uttar Pradesh</td>
+                    </tr>
+                    <tr>
+                        <td>Mustard</td>
+                        <td>2200</td>
+                        <td>Rajasthan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Function to handle the form submission
+        document.getElementById('rateForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get input values
+            const cropName = document.getElementById('cropSelect').value; // Get selected crop name
+            const cropPrice = document.getElementById('cropPrice').value;
+            const cropLocation = document.getElementById('cropLocation').value;
+
+            // Create a new row in the user rates table
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `<td>${cropName}</td><td>₹${cropPrice}</td><td>${cropLocation}</td>`;
+
+            // Append the new row to the user rates table
+            document.getElementById('userRates').appendChild(newRow);
+
+            // Reset the form
+            document.getElementById('rateForm').reset();
+        });
+    </script>
+</body>
+</html>

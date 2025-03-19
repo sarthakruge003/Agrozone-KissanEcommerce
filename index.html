@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AgroZone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #008000, #008000);
+            font-family: 'Poppins', sans-serif; /* Poppins font */
+            color: white;
+        }
+
+        .welcome-screen {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            max-width: 600px; /* Added max width for better layout */
+            margin: auto; /* Center the container */
+        }
+
+        .welcome-screen h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .welcome-screen p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: white;
+            color: rgb(5, 110, 5);
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #f4f4f4;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            width: 350px;
+            height: 250px;
+            margin-bottom: 20px;
+            animation: popUp 1.5s ease-out;
+            position: relative; /* To position the highlight effect */
+            display: inline-block; /* Allow stroke effect */
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Adding stroke and highlight effect */
+        .logo:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 5px solid rgba(255, 255, 255, 0.6); /* White stroke */
+            border-radius: 10px; /* Rounded corners for the stroke */
+            z-index: -1; /* Place behind the logo */
+            filter: blur(5px); /* Blur effect for the highlight */
+        }
+
+        .get {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="welcome-screen">
+        <!-- Placeholder for logo -->
+        <img src="mainlogo.png" alt="AgroZone Logo" class="logo">
+
+        <h1>Welcome to AgroZone</h1>
+        <p>Your gateway to smart farming tools and crop insights.</p>
+
+        <!-- Call to Action Button -->
+        <a class="cta-button" href="getstarted.html">Get Started</a>
+    </div>
+
+</body>
+
+</html>
